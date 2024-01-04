@@ -10,8 +10,9 @@ const SideBar = () => {
 
     const remove = (productId) => {
         dispatch(removeFromCart(productId));
-
     }
+
+    const totalAmount = products.reduce((totalSum , product) => totalSum += product?.price , 0);
 
   return (
     <>  
@@ -39,6 +40,14 @@ const SideBar = () => {
         ) : (
             <p className='text-center mt-4'>Empty cart!</p>
         )}
+
+        <hr className='border border-white'/>
+
+        <div className='flex items-center justify-evenly mb-2'>
+            <p className='text-xl font-semibold mt-4'>Grand total: </p>
+
+            <p className='text-xl font-semibold mt-4'>₹ {totalAmount}</p>
+        </div>
     </>
   )
 }
