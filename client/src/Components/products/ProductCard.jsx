@@ -66,11 +66,11 @@ const ProductCard = () => {
                                 <p className='text-gray-800 text-lg mb-2'>₹ {product?.price}</p>
 
                                 {isProductInCart(product?._id) ? (
-                                    <button onClick={() => removeItemFromCart(product?._id)} className='bg-red-800 text-white px-4 py-1 rounded'> 
+                                    <button onClick={() => removeItemFromCart(product?._id)} className='bg-red-700 text-white shadow-md px-4 py-1 rounded'> 
                                         Remove 
                                     </button>
                                 ) : (
-                                    <button onClick={() => addItemToCart(product)} className='bg-gray-800 text-white px-4 py-1 rounded'>
+                                    <button onClick={() => addItemToCart(product)} className='bg-gray-800 text-white px-4 py-1 shadow-md rounded'>
                                         Add to cart
                                     </button>
                                 )}

@@ -1,9 +1,17 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { removeFromCart } from '../../Redux/cartSlice';
+import { MdRemoveShoppingCart } from "react-icons/md";
 
 const SideBar = () => {
 
+    const dispatch = useDispatch();
     const products = useSelector((state) => state.cart.items);
+
+    const remove = (productId) => {
+        dispatch(removeFromCart(productId));
+
+    }
 
   return (
     <>  
@@ -18,6 +26,10 @@ const SideBar = () => {
                     <div className='ml-4'>
                         <p className='text-sm font-semibold'>{product?.name}</p>
                         <p className='text-xs text-gray-300'>₹ {product?.price}</p>
+
+                        <button title='Remove Item' className='px-2 py-1 mt-5 shadow-lg rounded-sm shadow-black  bg-red-600' onClick={() => remove(product?._id)} >
+                            <MdRemoveShoppingCart size={20}/>
+                        </button>
                     </div>
                 </div>
 

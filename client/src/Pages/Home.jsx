@@ -10,7 +10,7 @@ import {  Toaster } from 'react-hot-toast';
 const Home = () => {
   return (
     <>
-        <Toaster position='top-right'/>
+        <Toaster position='top-center'/>
         <NavBar/>
         <Banner images={images} />
 
